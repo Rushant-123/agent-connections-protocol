@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-connections-protocol.org/schemas/delegation.schema.json",
+  "title": "Delegation",
+  "type": "object",
+  "required": ["agentId", "scope", "constraints", "expires", "status"],
+  "properties": {
+    "agentId": { "type": "string" },
+    "scope": { "type": "string" },
+    "constraints": { "type": "string" },
+    "expires": { "type": "string" },
+    "status": { "enum": ["active", "expired", "revoked"] }
+  },
+  "additionalProperties": false
+}

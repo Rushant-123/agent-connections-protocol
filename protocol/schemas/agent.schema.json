@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-connections-protocol.org/schemas/agent.schema.json",
+  "title": "Agent",
+  "type": "object",
+  "required": ["id", "provider", "endpoint", "protocols", "status"],
+  "properties": {
+    "id": { "type": "string" },
+    "provider": { "type": "string" },
+    "endpoint": { "type": "string" },
+    "protocols": { "type": "array", "items": { "type": "string" } },
+    "status": { "enum": ["candidate", "verified", "blocked", "deprecated"] },
+    "capabilities": { "type": "array", "items": { "type": "string" } },
+    "experiences": { "type": "array", "items": { "type": "string" } },
+    "verification": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

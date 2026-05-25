@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-connections-protocol.org/schemas/connection.schema.json",
+  "title": "Connection",
+  "type": "object",
+  "required": ["agentId", "status", "frequency", "context", "preference"],
+  "properties": {
+    "agentId": { "type": "string" },
+    "status": { "enum": ["candidate", "trusted", "limited", "blocked"] },
+    "frequency": { "enum": ["new", "rarely", "sometimes", "often", "preferred"] },
+    "context": { "type": "string" },
+    "preference": { "type": "string" },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "event"],
+        "properties": {
+          "date": { "type": "string" },
+          "event": { "type": "string" },
+          "outcome": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

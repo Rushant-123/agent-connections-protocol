@@ -1,0 +1,35 @@
+{
+  "name": "agent-connections-protocol",
+  "version": "0.1.0",
+  "description": "Markdown-first protocol for agent relationship memory, trust scopes, stakes, and delegations.",
+  "type": "module",
+  "bin": {
+    "agent-connections-protocol": "./bin/acp.js",
+    "acp": "./bin/acp.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "validate": "node ./bin/acp.js validate templates"
+  },
+  "keywords": [
+    "agents",
+    "a2a",
+    "trust",
+    "markdown",
+    "protocol"
+  ],
+  "author": "Rushant",
+  "license": "MIT",
+  "files": [
+    "bin",
+    "docs",
+    "examples",
+    "protocol",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

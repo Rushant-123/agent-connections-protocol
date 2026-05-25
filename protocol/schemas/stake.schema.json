@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-connections-protocol.org/schemas/stake.schema.json",
+  "title": "Stake",
+  "type": "object",
+  "required": ["action", "level", "reason", "defaultRule"],
+  "properties": {
+    "action": { "type": "string" },
+    "level": { "enum": ["low", "medium", "high"] },
+    "reason": { "type": "string" },
+    "defaultRule": { "type": "string" }
+  },
+  "additionalProperties": false
+}
