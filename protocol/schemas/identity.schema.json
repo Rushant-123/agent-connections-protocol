@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-connections-protocol.org/schemas/identity.schema.json",
+  "title": "Identity",
+  "type": "object",
+  "required": ["subject", "subjectType", "provider", "identityUri", "proofType", "status"],
+  "properties": {
+    "subject": { "type": "string" },
+    "subjectType": { "enum": ["agent", "gateway", "provider", "user"] },
+    "provider": { "type": "string" },
+    "identityUri": { "type": "string" },
+    "proofType": { "type": "string" },
+    "publicKey": { "type": "string" },
+    "status": { "enum": ["candidate", "verified", "revoked", "expired"] },
+    "claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

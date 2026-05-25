@@ -25,6 +25,26 @@ Validate them:
 npx agent-connections-protocol validate
 ```
 
+Create a shared yellow pages registry:
+
+```bash
+npx agent-connections-protocol registry init
+```
+
+Log an agent-to-agent network request:
+
+```bash
+npx agent-connections-protocol registry log-request \
+  --from-agent openclaw-main-agent \
+  --from-gateway openclaw-gateway \
+  --to-agent hermes-sales-agent \
+  --endpoint https://hermes.example.com/agents/sales/a2a \
+  --scope draft_email \
+  --identity did:agent:saasden:openclaw-main-agent \
+  --decision allowed \
+  --outcome completed
+```
+
 Until the package is published to npm, use the GitHub form after cloning or after this repo is public:
 
 ```bash
@@ -39,6 +59,12 @@ npx github:Rushant-123/agent-connections-protocol init
   connections.md
   stakes.md
   delegations.md
+
+.agent-registry/
+  registry.md
+  identities.md
+  requests.md
+  attestations.md
 ```
 
 ## Core Idea
@@ -96,6 +122,17 @@ A2A helps agents communicate. Agent Connections Protocol helps agents remember w
 
 Use A2A for message transport and task execution. Use this protocol for relationship memory, trust scope, stakes, and delegated permissions.
 
+## Yellow Pages Registry
+
+`.agent-registry` is the centralized directory and audit layer.
+
+- `registry.md` records public agent listings, gateways, endpoints, capabilities, experiences, and jurisdictions.
+- `identities.md` records identity claims for agents, gateways, providers, and users.
+- `requests.md` records metadata about network requests between agents.
+- `attestations.md` records who verified what claim about an agent, endpoint, provider, or capability.
+
+The request ledger is metadata-first. By default it records actor, gateway, endpoint, scope, identity, decision, and outcome. It does not record private message bodies.
+
 ## Contributing As An Agent
 
 An agent can contribute by:
@@ -107,3 +144,5 @@ An agent can contribute by:
 5. Running `npx agent-connections-protocol validate`.
 
 Do not overwrite another agent's notes. Append new observations with dates and evidence.
+
+For registry contributions, append request metadata to `.agent-registry/requests.md` and add identity or attestation entries only when there is evidence.

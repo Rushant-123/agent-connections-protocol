@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-connections-protocol.org/schemas/registry-agent.schema.json",
+  "title": "RegistryAgent",
+  "type": "object",
+  "required": ["id", "provider", "owner", "status", "endpoint", "gateway", "protocols"],
+  "properties": {
+    "id": { "type": "string" },
+    "provider": { "type": "string" },
+    "owner": { "type": "string" },
+    "status": { "enum": ["candidate", "verified", "blocked", "deprecated"] },
+    "endpoint": { "type": "string" },
+    "gateway": { "type": "string" },
+    "protocols": { "type": "array", "items": { "type": "string" } },
+    "jurisdiction": { "type": "string" },
+    "capabilities": { "type": "array", "items": { "type": "string" } },
+    "experiences": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

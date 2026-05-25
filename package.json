@@ -6,7 +6,7 @@
   "bin": "./bin/acp.js",
   "scripts": {
     "test": "node --test",
-    "validate": "node ./bin/acp.js validate templates"
+    "validate": "node ./bin/acp.js validate templates && node ./bin/acp.js registry validate templates"
   },
   "keywords": [
     "agents",

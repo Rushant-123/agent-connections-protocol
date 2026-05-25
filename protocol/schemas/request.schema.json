@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-connections-protocol.org/schemas/request.schema.json",
+  "title": "Request",
+  "type": "object",
+  "required": ["time", "requestId", "fromAgent", "fromGateway", "toAgent", "endpoint", "scope", "identity", "decision", "outcome"],
+  "properties": {
+    "time": { "type": "string" },
+    "requestId": { "type": "string" },
+    "fromAgent": { "type": "string" },
+    "fromGateway": { "type": "string" },
+    "toAgent": { "type": "string" },
+    "endpoint": { "type": "string" },
+    "scope": { "type": "string" },
+    "identity": { "type": "string" },
+    "decision": { "enum": ["allowed", "denied", "ask_user", "sandboxed"] },
+    "outcome": { "enum": ["completed", "failed", "pending", "cancelled"] },
+    "payloadHash": { "type": "string" }
+  },
+  "additionalProperties": false
+}

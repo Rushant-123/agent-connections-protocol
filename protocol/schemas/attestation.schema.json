@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-connections-protocol.org/schemas/attestation.schema.json",
+  "title": "Attestation",
+  "type": "object",
+  "required": ["issuer", "subject", "claim", "evidence", "issuedAt", "expiresAt", "status"],
+  "properties": {
+    "issuer": { "type": "string" },
+    "subject": { "type": "string" },
+    "claim": { "type": "string" },
+    "evidence": { "type": "string" },
+    "issuedAt": { "type": "string" },
+    "expiresAt": { "type": "string" },
+    "status": { "enum": ["candidate", "verified", "revoked", "expired"] }
+  },
+  "additionalProperties": false
+}
