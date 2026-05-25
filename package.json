@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "description": "Markdown-first protocol for agent relationship memory, trust scopes, stakes, and delegations.",
   "type": "module",
-  "bin": {
-    "agent-connections-protocol": "./bin/acp.js",
-    "acp": "./bin/acp.js"
-  },
+  "bin": "./bin/acp.js",
   "scripts": {
     "test": "node --test",
     "validate": "node ./bin/acp.js validate templates"
